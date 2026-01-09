@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar Compra - Bands in Brazil</title>
+    <link rel="stylesheet" href="css/compra.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Finalizar Compra</h2>
+        <p>Evento: <strong id="compra-evento"></strong></p>
+        <p>Setor: <span id="compra-setor" style="color:#1db954"></span></p>
+        
+        <div class="form-group">
+            <label>Dados do Comprador</label>
+            <input type="text" id="compraNome" placeholder="Nome Completo" required>
+            <input type="text" id="compraCPF" placeholder="000.000.000-00" required>
+            <input type="tel" id="compraTelefone" placeholder="(00) 00000-0000" required>
+
+            <div class="resumo-preco">
+                <div class="resumo-item">
+                    <span>Ingresso</span>
+                    <span id="valor-base">R$ 0,00</span>
+                </div>
+                <div class="resumo-item">
+                    <span>Taxa (10%)</span>
+                    <span id="valor-taxa">R$ 0,00</span>
+                </div>
+                <hr style="border:0; border-top:1px solid #333; margin:10px 0;">
+                <div class="resumo-item total">
+                    <span>Total</span>
+                    <span id="valor-total" style="color:#1db954; font-weight:bold; font-size:1.2rem">R$ 0,00</span>
+                </div>
+            </div>
+
+            <button onclick="finalizar()">Confirmar Pagamento</button>
+        </div>
+        <a href="index.html" style="display:block; margin-top:15px; color:#888; text-decoration:none;">Cancelar</a>
+    </div>
+
+    <script>
+        // Lógica para carregar os valores escolhidos
+        const nomeEvento = localStorage.getItem('vNome');
+        const setor = localStorage.getItem('vSetor');
+        const preco = parseFloat(localStorage.getItem('vPreco'));
+        const taxa = preco * 0.10;
+        const total = preco + taxa;
+
+        document.getElementById('compra-evento').innerText = nomeEvento;
+        document.getElementById('compra-setor').innerText = setor;
+        document.getElementById('valor-base').innerText = `R$ ${preco.toFixed(2)}`;
+        document.getElementById('valor-taxa').innerText = `R$ ${taxa.toFixed(2)}`;
+        document.getElementById('valor-total').innerText = `R$ ${total.toFixed(2)}`;
+
+        function finalizar() {
+            const n = document.getElementById('compraNome').value;
+            if(n && document.getElementById('compraCPF').value) {
+                alert(`Sucesso, ${n}! Sua reserva para o setor ${setor} foi concluída.`);
+                window.location.href = 'index.html';
+            } else {
+                alert("Preencha todos os campos.");
+            }
+        }
+    </script>
+</body>
+</html>

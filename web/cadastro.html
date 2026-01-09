@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - Bands in Brazil</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Criar sua Conta</h2>
+        <p>Cadastre-se para garantir seus ingressos</p>
+        <div class="form-group">
+            <input type="text" id="regNome" placeholder="Nome Completo">
+            <input type="email" id="regEmail" placeholder="Seu e-mail">
+            <input type="password" id="regSenha" placeholder="Crie uma senha">
+            <button onclick="salvarCadastro()">Cadastrar Agora</button>
+        </div>
+        <a href="index.html" class="back-link">Voltar para a Home</a>
+    </div>
+
+    <script>
+        function salvarCadastro() {
+            const n = document.getElementById('regNome').value;
+            const e = document.getElementById('regEmail').value;
+            if(n && e) {
+                // Simula o salvamento do objeto Usuario
+                localStorage.setItem('usuarioLogado', n);
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = 'index.html';
+            } else {
+                alert("Preencha os campos obrigatórios.");
+            }
+        }
+    </script>
+</body>
+</html>

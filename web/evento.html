@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Show - Bands in Brazil</title>
+    <link rel="stylesheet" href="css/evento.css">
+</head>
+<body>
+    <header class="event-header">
+        <div class="header-nav">
+            <button onclick="window.location.href='index.html'" class="back-btn">← Voltar</button>
+        </div>
+        <div class="header-content">
+            <h1 id="detalhe-nome">Nome do Artista</h1>
+            <div class="event-badges">
+                <span class="badge">Tour 2026</span>
+                <span class="badge">Ingressos Oficiais</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="event-container">
+        <section class="info-card">
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>DATA</strong>
+                    <p id="detalhe-data">--/--/2026</p>
+                </div>
+                <div class="info-item">
+                    <strong>LOCAL</strong>
+                    <p id="detalhe-local">Carregando...</p>
+                </div>
+                <div class="info-item">
+                    <strong>ABERTURA</strong>
+                    <p>16:00h</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h3>Informações Gerais</h3>
+            <p>• <strong>Classificação:</strong> 16 anos. Menores apenas acompanhados pelos pais ou responsáveis.</p>
+            <p>• <strong>Atenção:</strong> É proibida a venda e consumo de bebidas alcoólicas para menores de 18 anos.</p>
+        </section>
+
+        <section class="section-box">
+            <h3>Selecione seu Setor</h3>
+            
+            <div class="setor-detail" onclick="selecionarSetor('Pista', 180)">
+                <div class="setor-header">
+                    <h4>PISTA</h4>
+                    <span class="price">R$ 180,00</span>
+                </div>
+                <p>Acesso ao setor geral com visão ampla do palco e bares próximos.</p>
+            </div>
+
+            <div class="setor-detail" onclick="selecionarSetor('Pista Premium', 380)">
+                <div class="setor-header">
+                    <h4>PISTA PREMIUM</h4>
+                    <span class="price">R$ 380,00</span>
+                </div>
+                <p>Acesso à área exclusiva em frente ao palco (Front Stage).</p>
+            </div>
+
+            <div class="setor-detail" onclick="selecionarSetor('VIP', 550)">
+                <div class="setor-header">
+                    <h4>CAMAROTE VIP</h4>
+                    <span class="price">R$ 550,00</span>
+                </div>
+                <p>Área elevada com visão privilegiada, banheiros e entrada exclusiva.</p>
+            </div>
+        </section>
+
+        <button class="btn-checkout" id="btnAcao" onclick="irParaCompra()">Selecionar um setor</button>
+    </main>
+
+    <script>
+        document.getElementById('detalhe-nome').innerText = localStorage.getItem('vNome');
+        document.getElementById('detalhe-local').innerText = localStorage.getItem('vLocal');
+        document.getElementById('detalhe-data').innerText = localStorage.getItem('vData');
+
+        let precoFinal = 0;
+        let setorNome = "";
+
+        function selecionarSetor(nome, preco) {
+            precoFinal = preco;
+            setorNome = nome;
+            const btn = document.getElementById('btnAcao');
+            btn.innerText = "Comprar " + nome + " - R$ " + preco + ",00";
+            btn.style.background = "#1ed760";
+        }
+
+        function irParaCompra() {
+            if (precoFinal === 0) {
+                alert("Selecione um setor antes de continuar.");
+                return;
+            }
+            if(!localStorage.getItem('usuarioLogado')) {
+                alert("Faça login para continuar a compra.");
+                window.location.href = 'cadastro.html';
+            } else {
+                localStorage.setItem('vPreco', precoFinal);
+                localStorage.setItem('vSetor', setorNome);
+                window.location.href = 'compra.html';
+            }
+        }
+    </script>
+</body>
+</html>

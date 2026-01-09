@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bands in Brazil 2026</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div id="auth-area">
+                <button id="btn-login" class="btn-primary-destaque" onclick="window.location.href='cadastro.html'">Entrar / Cadastrar</button>
+                <div id="user-logged" style="display: none; align-items: center; gap: 10px;">
+                    <span id="user-display" style="font-weight: bold;"></span>
+                    <button class="btn-logout" onclick="logout()">Sair</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-container">
+            <div class="logo-icon">🎸</div>
+            <h1 class="main-logo">BANDS<span>IN</span>BRAZIL</h1>
+        </div>
+        <p class="subtitle">A agenda oficial dos grandes shows de 2026</p>
+
+        <div class="search-container">
+            <input type="text" id="inputBusca" placeholder="Busque por Artista, Gênero ou Cidade..." onkeyup="buscarBanda()">
+        </div>
+    </header>
+
+    <main>
+        <section class="filters">
+            <button onclick="filtrar('todos')">Todos os Shows</button>
+            <button onclick="filtrar('7dias')">Próximos 7 Dias</button>
+            <button onclick="filtrar('30dias')">Próximos 30 Dias</button>
+        </section>
+
+        <section id="lista-bandas" class="grid-bandas">
+            </section>
+    </main>
+
+    <footer>
+        <p>© 2025 - Projeto Prático: Desenvolvimento de Software</p>
+        <p>ADS - 3º Semestre - Faculdade Positivo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
