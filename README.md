@@ -8,7 +8,6 @@ O **Bands In Brazil** é um sistema de agenda e reserva de ingressos para shows.
 O sistema organiza uma agenda com 24 shows para o ano de 2026, permitindo buscas por artista, gênero ou cidade. Possui filtros de data e um processo de compra que permite escolher entre os setores Pista, Pista Premium ou VIP, calculando taxas automaticamente.
 
 <div align="center">
-  <img src="./assets/detalhes.png" alt="Tela de Seleção de Ingressos" width="48%">
   <img src="./assets/preview.png" alt="Tela Inicial - Bands In Brazil" width="48%">
   &nbsp;
 </div>
