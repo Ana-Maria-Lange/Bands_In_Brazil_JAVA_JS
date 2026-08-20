@@ -8,7 +8,6 @@ O **Bands In Brazil** é um sistema de agenda e reserva de ingressos para shows.
 <div align="center">
   <img src="./assets/preview.png" alt="Tela Inicial - Bands In Brazil" width="48%">
   &nbsp;
-  <img src="./assets/detalhes.png" alt="Detalhes do Show e Checkout" width="48%">
 </div>
 
 ---
