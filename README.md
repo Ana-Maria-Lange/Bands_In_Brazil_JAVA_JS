@@ -22,9 +22,9 @@ O **Bands In Brazil** é um sistema de agenda e reserva de ingressos para shows.
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **JavaScript (Vanilla):** Lógica de manipulação do DOM, filtros de busca, ordenação cronológica e persistência de dados.
-- **HTML5:** Estrutura semântica das páginas da aplicação.
-- **CSS3:** Estilização personalizada, animações dinâmicas e layout totalmente responsivo.
+- **JavaScript:** Lógica de manipulação do DOM, filtros de busca, ordenação cronológica e persistência de dados.
+- **HTML:** Estrutura semântica das páginas da aplicação.
+- **CSS:** Estilização personalizada, animações dinâmicas e layout totalmente responsivo.
 - **Java:** Implementação de regras de negócio e processamento no backend (localizado na pasta `src/`).
 
 ## 💻 Como Rodar o Projeto Localmente
@@ -33,7 +33,6 @@ Este projeto foi estruturado para execução rápida no front-end sem necessidad
 
 ### Pré-requisitos
 - Ter o **Git** instalado no computador.
-- Ter um navegador web ou a extensão **Live Server** no editor de código.
 
 ### Passo a Passo
 
