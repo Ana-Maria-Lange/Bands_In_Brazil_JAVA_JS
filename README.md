@@ -10,6 +10,7 @@ O sistema organiza uma agenda com 24 shows para o ano de 2026, permitindo buscas
 <div align="center">
   <img src="./assets/preview.png" alt="Tela Inicial - Bands In Brazil" width="48%">
   &nbsp;
+  <img src="./assets/detalhes.png" alt="Detalhes" width="48%">
 </div>
 
 ## 🚀 Funcionalidades Principais
@@ -31,8 +32,8 @@ O sistema organiza uma agenda com 24 shows para o ano de 2026, permitindo buscas
 
 ### Passo a Passo
 
-1. **Clonar o projeto:** No terminal, execute `git clone https://github.com/Ana-Maria-Lange/Bands_In_Brazil_JAVA_JS.git` e entre na pasta com `cd Bands_In_Brazil_JAVA_JS`.
-2. **Abrir no editor:** Digite `code .` para abrir o projeto no VS Code.
+1. **Baixar o código:** Abra o seu terminal (CMD, PowerShell ou Git Bash), navegue até o diretório desejado e clone o repositório executando `git clone https://github.com/Ana-Maria-Lange/Bands_In_Brazil_JAVA_JS.git` e depois acesse a pasta com `cd Bands_In_Brazil_JAVA_JS`.
+2. **Abrir no editor:** Abra a pasta no VS Code digitando `code .` no terminal.
 3. **Executar a aplicação:** Abra o arquivo `web/index.html` diretamente no navegador ou utilize o *Live Server* do VS Code.
 
 > **Nota:** O código-fonte em Java encontra-se na pasta `src/`.
